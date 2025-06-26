@@ -1,5 +1,5 @@
 # Backend
-# 🧠 File Upload & Parsing Backend with Node.js + MongoDB
+# File Upload & Parsing Backend with Node.js + MongoDB
 
 This is a simple backend built using **Node.js**, **Express**, and **MongoDB** that allows a user to:
 
@@ -36,6 +36,36 @@ This is a simple backend built using **Node.js**, **Express**, and **MongoDB** t
 - PDF-Parse, Mammoth (for file parsing)
 - JWT (optional auth)
 - Streamlit for frontend
+
+MongoDB Schema Diagrams
+👤 User Collection Schema
+
+| Field      | Type   | Constraints      | Description                 |
+| ---------- | ------ | ---------------- | --------------------------- |
+| `username` | String | Unique, Required | Unique username of the user |
+| `password` | String | Required         | Hashed user password        |
+
+
+
+📄 Document Collection Schema
+| Field        | Type   | Description                             |
+| ------------ | ------ | --------------------------------------- |
+| `filename`   | String | Name of the uploaded file               |
+| `content`    | String | Parsed text content (truncated if long) |
+| `uploadedAt` | Date   | Timestamp when the file was uploaded    |
+
+
+🔍 Nested extracted Field
+| Field       | Type   | Description                                |
+| ----------- | ------ | ------------------------------------------ |
+| `name`      | String | Extracted full name from document (if any) |
+| `email`     | String | Extracted email address                    |
+| `github`    | String | Extracted GitHub profile link              |
+| `linkedin`  | String | Extracted LinkedIn profile link            |
+| `education` | String | Extracted education details                |
+
+
+ 
 
 ---
 📸 Screenshots
